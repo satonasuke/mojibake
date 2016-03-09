@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            "a": [
+                ":adobe:",
+                ":access:"
+            ],
+            "b": [
+                ":bluetooth:"
+            ],
+            "c": [
+                ":oic_no_c:",
+                ":copyright:"
+            ],
+            "d": [
+                ":d:"
+            ],
+            "e": [
+                ":ekan:"
+            ],
+            "f": [
+                ":facebook:"
+            ],
+            "g": [
+                ":ggrks:"
+            ],
+            "h": [
+                ":hulu:"
+            ],
+            "i": [
+                ":oic_no_i:"
+            ],
+            "j": [
+                ":java:"
+            ],
+            "k": [
+                ":kotlin:"
+            ],
+            "l": [
+                ":lpic:"
+            ],
+            "m": [
+                ":metasploit:"
+            ],
+            "n": [
+                ":netscape:",
+                ":onenote:"
+            ],
+            "o": [
+                ":opera:"
+            ],
+            "p": [
+                ":publisher:",
+                ":powerpoint:"
+            ],
+            "q": [
+                ":quicktime:"
+            ],
+            "r": [
+                ":rlang:"
+            ],
+            "s": [
+                ":skype:",
+                ":slack2:"
+            ],
+            "t": [
+                ":tumblr:"
+            ],
+            "u": [
+                ":ustream:"
+            ],
+            "v": [
+                ":vim:"
+            ],
+            "w": [
+                ":word:"
+            ],
+            "x": [
+                ":xwindow:",
+                ":excel:"
+            ],
+            "y": [
+                ":yahoo:"
+            ],
+            "z": [
+                ":zabbix:"
+            ],
+            "?": [
+                ":question:",
+                ":grey_question:"
+            ],
+            "!": [
+                ":exclamation:",
+                ":grey_exclamation:"
+            ],
+            "0": [
+                ":zero:"
+            ],
+            "1": [
+                ":mineone:"
+            ],
+            "2": [
+                ":minetwo:"
+            ],
+            "3": [
+                ":minethree:"
+            ],
+            "4": [
+                ":four:"
+            ],
+            "5": [
+                ":five:"
+            ],
+            "6": [
+                ":six:"
+            ],
+            "7": [
+                ":seven:"
+            ],
+            "8": [
+                ":eight:"
+            ],
+            "9": [
+                ":nine:"
+            ],
+            "ざ": [
+                ":zawazawanoza:"
+            ],
+            "わ": [
+                ":wa:"
+            ],
+            "…": [
+                ":ten:"
+            ],
+            " ": [
+                "　"
+            ]
+        };
+
+        function Conversion(){
+            var input_date = document.form.input_text.value.toLowerCase();
+            var input_array = input_date.split("");
+            var output_array = [];
+
+            for(var i in input_array) {
+                if (obj.hasOwnProperty(input_array[i])) {
+                    output_array.push(obj[input_array[i]][Math.random()*obj[input_array[i]].length|0]);
+                }
+                else{
+                    output_array.push(input_array[i]);
+                }
+            }
+            document.form.output_text.value = output_array.join('');
+        }
+    </script>
+    <form name="form" id="form"  action="">
+        <input type="Conversion_text" id="input_text">
+        <input type="button" value="変換"  onclick=Conversion()>
+        <input type="Copy_text"  id="output_text"  readonly>
+    </form>
+</body>
+</html>
